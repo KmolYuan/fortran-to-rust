@@ -1,7 +1,4 @@
 fn main() {
-    cc::Build::new().file("ten/ten.f90").flag("--sysroot=ten").compile("ten");
-    // println!("cargo:rustc-link-lib=dylib=gcc");
-    // println!("cargo:rustc-link-lib=static=quadmath");
+    cc::Build::new().file("src/main.f90").flag("--sysroot=test").compile("test");
     println!("cargo:rustc-link-lib=dylib=gfortran");
-    // println!("cargo:rustc-link-lib=static=advapi32");
 }

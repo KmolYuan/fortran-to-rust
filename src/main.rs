@@ -1,9 +1,9 @@
 extern "C" {
-    fn __ten_mod_MOD_ten(input: &libc::c_int) -> libc::c_int;
+    fn test_(a: *mut f64, n: *const i32);
 }
 
 fn main() {
-    let input = 20;
-    let output = unsafe { __ten_mod_MOD_ten(&input) };
-    println!("{} * 10 = {}", input, output);
+    let mut a = [0.5, 20.25];
+    unsafe { test_(a.as_mut_ptr(), &2) };
+    println!("Rust: {}, {}", a[0], a[1]);
 }
